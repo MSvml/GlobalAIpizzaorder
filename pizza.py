@@ -1,9 +1,8 @@
+## Pizza Order System ##
+
 import csv
 import datetime
-  
-  
-# GLOBAL AI HUB PROJECT  
-  
+
 menu = """*Please Select a Pizza :
 1: Classic Pizza - ingredients : Tomato, mozzarella and basil.
 2: Margarita Pizza - ingredients : tomato, mozzarella, basil, olive oil and salt.
@@ -22,7 +21,6 @@ menu = """*Please Select a Pizza :
 17: corn
 18: Sausage
 * Thank You!"""
-
 
 with open('Menu.txt', 'w',encoding="utf-8") as f:
     f.write(menu)
@@ -131,23 +129,20 @@ class Sausage(Extra):
         
 
 class Decoator:
-    def init(self, pizzaC , extraClasses):
+    def __init__(self, pizzaC , extraClasses):
         self.pizza = pizzaC
-        self.extraDesc= " "
+        self.extraDesc = ''
         self.extraTotal = 0
         for extraC in extraClasses :
             self.extraTotal += extraC.get_cost()
-            self.extraDesc += " " + extraC.get_description() 
-
-
-
+            self.extraDesc += ' ' + extraC.get_description()
+            
+        
     def get_cost(self):
         return self.pizza.get_cost() + self.extraTotal
-
+    
     def get_description(self):
-        return self.pizza.get_description() + self.extra.get_description()
-        
-
+        return self.pizza.get_description() + self.extraDesc
 
 class Kullanici:
     def init(self, name, id_no, cc_num, cc_cvv):
@@ -181,33 +176,33 @@ def create_order():
         print("You made an invalid choice.")
         return None
     
-    extra_list=[]
-    while True:
-        extra_choice =input("Please choose your extra : (q for quit) ")
-        if extra_choice=="q":
+    extra_list = []
+    while True :
+        extra_choice = input("Please choose your extra : (q for quit )")
+        if extra_choice == 'q':
             break
-        elif extra_choice =="11":
+        elif extra_choice == '11':
             extra = Olive("Olive",3)
             extra_list.append(extra)
-        elif extra_choice == "12":
+        elif extra_choice == '12':
             extra = Mushrooms("Mushroom", 5)
             extra_list.append(extra)
-        elif extra_choice == "13":
+        elif extra_choice == '13':
             extra = GoatCheese("Goat Cheese", 7)
             extra_list.append(extra)
-        elif extra_choice ==" 14":
+        elif extra_choice == '14':
             extra = Cheese("Cheddar cheese", 7)
             extra_list.append(extra)
-        elif extra_choice == "15":
+        elif extra_choice == '15':
             extra = Mozzarella("Mozzarella", 7)
             extra_list.append(extra)
-        elif extra_choice == "16":
+        elif extra_choice == '16':
             extra = Tomato("tomato ", 4)
             extra_list.append(extra)
-        elif extra_choice ==" 17":
+        elif extra_choice == '17':
             extra = Corn("corn ", 5)
             extra_list.append(extra)
-        elif extra_choice=="18":
+        elif extra_choice=='18':
             extra=Sausage("sausage",6)
             extra_list.append(extra)
         else:
@@ -215,15 +210,17 @@ def create_order():
             return None
 
     
-    # Use Decorator to combine pizza and sauce objects
+    # Pizza ve sos nesnelerini birleştirmek için Decorator kullanın
     
+    
+
     
     pizza_with_extra = Decoator(pizza, extra_list)
     
+    # print("Seçiminiz: ", pizza_with_Extra.get_description())
+    # print("Toplam maliyet: ", pizza_with_Extra.get_cost())
     
-    
-    # Let's Ask the Customer for their Information
-    
+
     
     name=input("Please text your name.")
     print(f"Hello {name}, we will save your order details.")
@@ -234,7 +231,7 @@ def create_order():
     Phone = input("Please enter your phone number: ")
     
     
-    # print the information on the screen
+    
     
     print("Your order details are as follows:")
     print(f"Delivery address: {addres}")
