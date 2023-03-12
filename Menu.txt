@@ -1,0 +1,18 @@
+*Please Select a Pizza :
+1: Classic Pizza - ingredients : Tomato, mozzarella and basil.
+2: Margarita Pizza - ingredients : tomato, mozzarella, basil, olive oil and salt.
+3: Mix Pizza - ingredients : mushroom, cheddar cheese, tomato, sausage, salami and sausage.
+4: White Pizza - ingredients : ricotta sauce, mozzarella cheese, romano cheese and parsley.
+5: Supreme Pizza - Ingredients : pizza sauce, mozzarella cheese, sausage, freshly sliced ​​red and green peppers, onions, mushrooms and pepperoni.
+6: Pepperoni Pizza - ingredients : pizza sauce, mozzarella, pepperoni, thyme.
+7: Gennaro Pizza - ingredients : pizza sauce, mozzarella cheese, sliced ​​sausage, marinated mushrooms, corn and thyme.
+* Extra Ingredients of your choice:
+11: Olive
+12: mushroom
+13: Goat cheese
+14: Cheddar cheese
+15: Mozzarella
+16: Tomato
+17: corn
+18: Sausage
+* Thank You!
