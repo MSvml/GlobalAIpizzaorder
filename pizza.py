@@ -135,7 +135,7 @@ class Decoator:
         self.extraTotal = 0
         for extraC in extraClasses :
             self.extraTotal += extraC.get_cost()
-            self.extraDesc += ' ' + extraC.get_description()
+            self.extraDesc += ', extra ' + extraC.get_description()
             
         
     def get_cost(self):
